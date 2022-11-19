@@ -13,14 +13,14 @@
                 <input type="text" required id="cname" name="cname" class="w3-round-large w3-input w3-border w3-margin-bottom" placeholder="Enter Candidate Name" maxlength=30>
                 <input type="password" required id="password" name="password" class="w3-round-large w3-input w3-border w3-margin-bottom" placeholder="Enter Password" maxlength=30>
                 <%
-                    /* String sql="select * from department";
-                    rs=stmt.executeQuery(sql); */
+                    String sql="select * from department";
+                    rs=stmt.executeQuery(sql);
                 %>
                 <select id="deptid" name="deptid" class="w3-round-large w3-select w3-border w3-margin-bottom" title="Select Department">
-                    <option disabled>Select Department</option>o
-                    <% /*while(rs.next()) {*/%>
-                    <%-- <option value="<% out.println(rs.getString("deptid")); %>"><% out.println(rs.getString("dname")); %></option> --%>
-                    <%// }  %>
+                    <option disabled>Select Department</option>
+                    <% while(rs.next()) {%>
+             <option value="<% out.println(rs.getString("deptid")); %>"><% out.println(rs.getString("dname")); %></option> --%>
+                    <%}  %>
                 </select><br>
                 <label><b>Candidate Type: </b></label>&nbsp;
                 <input type="radio" name="ctype" class="w3-radio w3-border w3-padding w3-margin-bottom" value="Teacher"><label><b>&nbsp;Teacher</b></label>&nbsp;
